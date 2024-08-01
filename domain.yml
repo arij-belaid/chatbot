@@ -1,0 +1,173 @@
+version: "3.1"
+
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - terrain
+  - Zone
+  - T_terrain
+  - arch
+  - Type_Menuiserie
+  - Type_Aluminum
+  - Stores_RDC
+  - Revetement
+  - choix grès
+  - choix Marbre
+  - Type_PVC
+entities:
+  - terrain
+  - Type_terrain
+  - Faux_Plafond
+  - Portes_Blindées
+  - Type_Menuiserie
+  - Stores_RDC
+  - Revetement
+  - Cuisine_Equipé
+  - Salle_bains
+  - Climatisation
+  - choix grès
+  - choix Marbre
+slots:
+  terrain:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: terrain
+  Type_terrain:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: Type_terrain
+
+  Faux_Plafond:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: Faux_Plafond
+  Portes_Blindées:
+    type: bool
+    mappings:
+      - type: from_entity
+        entity: Portes_Blindées
+  Type_Menuiserie:
+    type: categorical
+    values:
+      - Aluminum
+      - PVC
+    mappings:
+      - type: from_entity
+        entity: Type_Menuiserie
+  Stores_RDC:
+    type: categorical
+    values:
+      - avec fer forgé
+      - sans fer forgé
+    mappings:
+        - type: from_entity
+          entity: Stores_RDC
+  Revetement:
+    type: categorical
+    values:
+      - Grès
+      - Marbre
+    mappings:
+        - type: from_entity
+          entity: Revetement
+  choix Marbre:
+      type: text
+      mappings:
+        - type: from_entity
+          entity: choix Marbre
+  choix grès:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: choix grès
+  Cuisine_Equipé:
+    type: bool
+    mappings:
+      - type: from_entity
+        entity: Cuisine_Equipé
+  Salle_bains:
+    type: bool
+    mappings:
+     - type: from_entity
+       entity: Salle_bains
+  Climatisation:
+    type: bool
+    mappings:
+     - type: from_entity
+       entity: Climatisation
+
+responses:
+  utter_terrain:
+  - text: "t'as deja un terrain? "
+  utter_T2:
+  - text: "tu veux acheter! on peut t'aider"
+  utter_Type:
+  - text: " Qu'elle est le type de terrain "
+
+  utter_Zone:
+  - text: " Type de zone ! argicole ou constructive   "
+  utter_greet:
+  - text: "comment vous aidez"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Est ce que ca t'as aidé?"
+
+  utter_happy:
+  - text: "ok,Continue!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  utter_no:
+  - text: "on peut vous proposer un terrain selon votre besoin"
+  utter_ask_faux_plafond:
+  - text: "Avec faux plafond ou non "
+  utter_ask_portes_blindés:
+  - text: "Les portes d'entrée sont blindés ou non "
+  utter_ask_portes_alternative:
+  - text: "tu veux alors portes en bois"
+  utter_ask_Type_Menuiserie:
+  - text: "tu préfères avec du l'Aluminum ou PVC"
+  utter_ask_Type_Aluminum:
+  - text: "Tu veux donc TPR?"
+  utter_ask_Type_PVC:
+  - text: "Tu veux donc Wintech?"
+  utter_ask_Stores_RDC:
+  - text: "Les stores avec fer forgé ou non?"
+  utter_ask_Revetement:
+  - text: " Revetement : Grès ou Marbre ?"
+  utter_choix_grès:
+  - text: "Tunisien:SMOCER ou Importé:Espagnol"
+  utter_ask_cuisine_Equipé:
+  - text: "Cuisine equipé ou non"
+  utter_ask_Salle_bains:
+  - text: "Salle de bains sera équipé ou non "
+  utter_ask_Climatisation:
+  - text: "avec ou sans climatisation?"
+  utter_choix_Marbre:
+  - text: "choix marbre"
+actions:
+- action_hello_world
+- action_save_conversation
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

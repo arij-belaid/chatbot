@@ -1,0 +1,45 @@
+version: "3.1"
+language: fr
+
+
+pipeline:
+  - name: "transformers.BERTTokenizer"
+    model_name: "bert-base-uncased"  # You can use different models like "bert-base-cased", etc.
+
+  - name: "transformers.BERTFeaturizer"
+    model_name: "bert-base-uncased"  # Should match the model used in Tokenizer
+
+  - name: "transformers.BERTClassifier"
+    model_name: "bert-base-uncased"  # Should match the model used in Tokenizer
+
+  - name: "rasa.nlu.components.LanguageModelFeaturizer"
+  - name: "language_model_featurizer"
+
+
+policies:
+- name: "rasa_core.policies.memoization.MemoizationPolicy"
+  max_history: 5
+
+- name: "rasa_core.policies.ensemble.FallbackPolicy"
+  fallback_action_name: "action_default_fallback"
+  core_fallback_threshold: 0.3
+  nlu_fallback_threshold: 0.7
+
+
+- name: "rasa_core.policies.form_policy.FormPolicy"
+
+- name: "rasa_core.policies.ensemble.DietClassifier"
+  epochs: 100
+  batch_size: 32
+  embedding_dim: 256
+
+- name: "rasa_core.policies.rule_policy.RulePolicy"
+
+- name: "rasa_core.policies.KerasPolicy"
+  epochs: 100
+  batch_size: 32
+  embedding_dim: 256
+  hidden_layer_sizes:
+  - 256
+  - 128
+assistant_id: 20240801-142101-light-credits

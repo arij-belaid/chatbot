@@ -1,0 +1,168 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - oui
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: Type_Menuiserie
+  examples: |
+    - Aluminum
+    - PVC
+- intent: Type_Aluminum
+  examples: |
+    - TPR
+    - tpr
+- intent: Type_PVC
+  examples: |
+    - Wintech
+    - pvc wintech
+    - wintech
+- intent: arch
+  examples: |
+    - je veux l'aide d'architecte
+    - j'ai besoin d'architecte
+    - je suis en train de planifier ma l'architecture de ma maison
+- intent : terrain
+  examples: |
+    -[true](terrain)
+    -[false](terrain)
+
+- intent : T_terrain
+  examples: |
+    - bande_continu 
+    - jumelé
+    - implantion_Isolé
+
+- intent: Stores_RDC
+  examples: |
+    - avec fer forgé
+    - sans fer forgé
+- intent: Revetement
+  examples: |
+    - Marbre
+    - Grès
+- intent: choix grès
+  examples: |
+    - Tunisien Smocker
+    - Importé Espagnol
+- intent: choix Marbre
+  examples: |
+    - Tunisien 
+    - Thala beige ou Gris
+    - Importé Italie
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad

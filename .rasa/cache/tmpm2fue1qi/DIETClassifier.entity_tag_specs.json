@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-terrain",
+      "2": "I-terrain",
+      "3": "L-terrain",
+      "4": "U-terrain",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-terrain": 1,
+      "I-terrain": 2,
+      "L-terrain": 3,
+      "U-terrain": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]

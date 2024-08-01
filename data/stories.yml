@@ -1,0 +1,229 @@
+version: "3.1"
+
+stories:
+- story: Conv terrain 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: arch
+  - action: utter_terrain
+  - intent: affirm
+  - action: utter_Type
+  - intent: T_terrain
+  - action: utter_ask_faux_plafond
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_portes_blindés
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_Type_Menuiserie
+  - intent: Type_Menuiserie
+  - slot_was_set:
+     - Type_Menuiserie: 'Aluminum'
+  - action: utter_ask_Type_Aluminum
+  - intent: affirm
+  - action: utter_ask_Stores_RDC
+  - intent: Stores_RDC
+  - action: utter_ask_Revetement
+  - intent: Revetement
+  - slot_was_set:
+     - Revetement: 'Grès'
+  - action: utter_choix_grès
+  - intent: choix grès
+  - action: utter_ask_cuisine_Equipé
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_Salle_bains
+  - or:
+    - intent: affirm
+    - intent: deny
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_goodbye
+  - action: action_save_conversation
+# conv 4 terrain:oui ,Aluminum,Marbre
+- story: Conv terrain 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: arch
+  - action: utter_terrain
+  - intent: affirm
+  - action: utter_Type
+  - intent: T_terrain
+  - action: utter_ask_faux_plafond
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_portes_blindés
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_Type_Menuiserie
+  - intent: Type_Menuiserie
+  - slot_was_set:
+      - Type_Menuiserie: 'Aluminum'
+  - action: utter_ask_Type_Aluminum
+  - intent: Type_Aluminum
+  - action: utter_ask_Stores_RDC
+  - intent: Stores_RDC
+  - action: utter_ask_Revetement
+  - intent: Revetement
+  - slot_was_set:
+      - Revetement: 'Marbre'
+  - action: utter_greet
+  - action: utter_choix_Marbre
+  - intent: choix Marbre
+  - action: utter_ask_cuisine_Equipé
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_Salle_bains
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_Climatisation
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_goodbye
+  - action: action_save_conversation
+
+
+#Story 3 terrain :oui ,PVC,Grès
+- story: Conv terrain 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: arch
+  - action: utter_terrain
+  - intent: affirm
+  - action: utter_Type
+  - intent: T_terrain
+  - action: utter_ask_faux_plafond
+  - intent: affirm
+  - action: utter_ask_portes_blindés
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_Type_Menuiserie
+  - intent: Type_Menuiserie
+  - slot_was_set:
+      - Type_Menuiserie: 'PVC'
+  - action: utter_ask_Type_PVC
+  - intent: Type_PVC
+  - action: utter_ask_Stores_RDC
+  - intent: Stores_RDC
+  - action: utter_ask_Revetement
+  - intent: Revetement
+  - slot_was_set:
+      - Revetement: 'Grès'
+  - action: utter_choix_grès
+  - intent: choix grès
+  - action: utter_ask_cuisine_Equipé
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_Salle_bains
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_Climatisation
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_goodbye
+  - action: action_save_conversation
+
+
+#  - action: action_log_conversation
+#story 5 terrain:oui pvc,marbre
+- story: Conv terrain 5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: arch
+  - action: utter_terrain
+  - intent: affirm
+  - action: utter_Type
+  - intent: T_terrain
+  - action: utter_ask_faux_plafond
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_portes_blindés
+  - or:
+    - intent: affirm
+    - intent: deny
+  - slot_was_set:
+      - Portes_Blindées: 'oui'
+  - action: utter_ask_Type_Menuiserie
+  - intent: Type_Menuiserie
+  - slot_was_set:
+      - Type_Menuiserie: 'PVC'
+  - action: utter_ask_Type_PVC
+  - intent: Type_PVC
+  - action: utter_ask_Stores_RDC
+  - intent: Stores_RDC
+  - action: utter_ask_Revetement
+  - intent: Revetement
+  - slot_was_set:
+      - Revetement: 'Marbre'
+  - action: utter_choix_Marbre
+  - intent: choix Marbre
+  - action: utter_ask_cuisine_Equipé
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_Salle_bains
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_ask_Climatisation
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_goodbye
+  - action: action_save_conversation
+
+#noo terrain
+- story: Conv terrain
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: arch
+  - action: utter_terrain
+  - intent: deny
+  - action: utter_no
+  - action: action_save_conversation
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
